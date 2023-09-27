@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:want_to_go_home/models/phone.dart';
 import 'package:want_to_go_home/pages/access_list_page.dart';
 import 'package:want_to_go_home/pages/add_phone_page.dart';
 import 'package:want_to_go_home/pages/editing_phone_page.dart';
 import 'package:want_to_go_home/pages/opening_gate_page.dart';
 import 'models/phone_list.dart';
 
-void main() {
+void main() async{
+  await Hive.initFlutter();
+  Hive.registerAdapter<Phone>(PhoneAdapter());
   runApp(const MyApp());
 }
 
