@@ -26,9 +26,11 @@ class OpeningGatePage extends StatelessWidget {
                     PhoneList().accessPhone[0].number.toString());
               },
               label: const Text(
-                'Изменить',
+                'Открыть',
                 style: TextStyle(color: Colors.black),
               ),
+              icon: const Icon(Icons.phone,
+              color: Colors.green,),
             ),
           ],
         ),
