@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:want_to_go_home/pages/access_list_page.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:want_to_go_home/models/phone_list.dart';
+import '../widgets/access_phone.dart';
 
 class OpeningGatePage extends StatelessWidget {
   const OpeningGatePage({super.key});
@@ -12,38 +14,16 @@ class OpeningGatePage extends StatelessWidget {
         title: const Text('Открыть шлагбаум'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(30),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              alignment: Alignment.center,
-              width: double.infinity,
-              height: 100,
-              decoration: BoxDecoration(
-                border: Border.all(width: 2, color: Colors.blue),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: GestureDetector(
-                onTap: () {},
-                child: const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Точка доступа',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text('Нажмите здесь, чтобы открыть шлагбаум'),
-                  ],
-                ),
-              ),
-            ),
+            const AccessPhone(),
             FloatingActionButton.extended(
               onPressed: () {
-                Navigator.pushNamed(context, AccessListPage.rout);
+                FlutterPhoneDirectCaller.callNumber(
+                    PhoneList().accessPhone[0].number.toString());
               },
               label: const Text(
                 'Изменить',

@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:want_to_go_home/models/phone.dart';
 import 'package:want_to_go_home/pages/access_list_page.dart';
 import 'package:want_to_go_home/pages/add_phone_page.dart';
-import 'package:want_to_go_home/pages/editing_phone_page.dart';
 import 'package:want_to_go_home/pages/opening_gate_page.dart';
 import 'models/phone_list.dart';
 
@@ -33,7 +32,6 @@ class MyApp extends StatelessWidget {
           ),
         home: const OpeningGatePage(),
         routes: {
-          EditingPhonePage.rout: (context) => const EditingPhonePage(),
           AddPhonePage.rout: (context) => const AddPhonePage(),
           AccessListPage.rout: (context) => const AccessListPage(),
         },

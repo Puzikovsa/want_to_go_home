@@ -64,6 +64,8 @@ class _AddPhonePageState extends State<AddPhonePage> {
                 }
                 Provider.of<PhoneList>(context, listen: false).addListPhone(
                     _titleController.text, _numberController.text);
+                ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Номер добавлен')));
                 Navigator.of(context).pop();
               },
               child: const Icon(
